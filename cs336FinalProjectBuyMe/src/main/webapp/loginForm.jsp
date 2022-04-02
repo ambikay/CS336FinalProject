@@ -7,7 +7,6 @@
 <title>Register</title>
 </head>
 <body>
-	An existing bar wants to sell an existing beer! Type the bar, the beer and the price of the beer:
 	<br>
 		<form method="get" action="createAccount.jsp">
 			<table>
