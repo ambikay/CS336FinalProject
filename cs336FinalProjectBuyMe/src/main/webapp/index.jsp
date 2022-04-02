@@ -14,14 +14,23 @@
 	<body>
 
 		<h1>Welcome to BuyMe</h1>
-	
+		
+		<form method="get" action="loginVerify.jsp">
+			<table>
+				<tr>    
+					<td>Login Name</td><td><input type="text" name="login_name"></td>
+				</tr>
+				<tr>
+					<td>Password</td><td><input type="text" name="password"></td>
+				</tr>
+			</table>
+			<input type="submit" value="login">
+		</form>
+
 		<form method="post" action="loginForm.jsp">
-		  <input type="radio" name="command" value="login"/>Already have an account? Login.
-		  <br>
 		  <input type="radio" name="command" value="register"/>Don't have an account yet? Register now!
 		    <!-- when the radio for bars is chosen, then 'command' will have value 
 		     | 'bars', in the show.jsp file, when you access request.parameters -->
-		  <br>
 		  <input type="submit" value="submit" />
 		</form>
 	</body>
