@@ -9,5 +9,5 @@
 #create table car(item_id int, color varchar(20), make varchar(20), model varchar(20), year varchar(4), primary key (item_id), foreign key (item_id) references items(item_id))
 #create table motorbike(item_id int, color varchar(20), type varchar(20), company_name varchar(20), primary key (item_id), foreign key (item_id) references items(item_id))
 #create table truck(item_id int, capacity int, size int, dimensions varchar(20), primary key (item_id), foreign key (item_id) references items(item_id))
+#insert into enduser(eid,login_name, email, password) values (1,"admin", "admin@gmail.com", "adminuser123")
 #select * from enduser
-#select count(*) from enduser
