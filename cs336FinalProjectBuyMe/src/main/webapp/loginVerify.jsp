@@ -59,11 +59,15 @@
 	}
 %>
 
+<%--
 		<form method="post" action="loginForm.jsp">
 		  <input type="radio" name="command" value="register"/>Don't have an account yet? Register now!
 		    <!-- when the radio for bars is chosen, then 'command' will have value 
 		     | 'bars', in the show.jsp file, when you access request.parameters -->
 		  <input type="submit" value="submit" />
 		</form>
+--%>
+		
+		<a href="index.jsp"><button type="button">Log out</button></a>
 </body>
 </html>
