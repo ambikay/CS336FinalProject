@@ -58,9 +58,8 @@
 			<%
 			//parse out the results
 			while (result.next()) { %>
-				<% String item = result.getString("item_id"); %>
 				<tr>
-					<td><%out.print(item);%></td>   
+					<td><%= result.getString("item_id")%></td>   
 					<td>
 						<% if (entity.equals("car")){ %>
 							<%= result.getString("make")%>
@@ -89,7 +88,6 @@
 						<% } %>
 					</td>
 					<td><%= result.getString("current_bid")%></td>
-					<td><a href="item.jsp"><button type="button" value=<%=item%>>click to view</button></a></td>
 				</tr>
 			<% }
 			//close the connection.
