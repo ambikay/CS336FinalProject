@@ -6,12 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>View Alerts</title>
-<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+<title>View Alerts</title>>
 </head>
 <body>
-	<button onclick="window.location.href='account.jsp';">Return to account page</button>
+	<button onclick="window.location.href='userfirstpage.jsp';">Return to account page</button>
 
 <h2> View your alerts</h2>
 <%
@@ -34,10 +32,7 @@
 		out.print("Alert Message");
 		out.print("</th>");
 		out.print("<th>");
-		out.print("Product ID");
-		out.print("</th>");
-		out.print("<th>");
-		out.print("Auction ID");
+		out.print("Item ID");
 		out.print("</th>");
 		out.print("</tr>");
 
@@ -51,9 +46,9 @@
 			out.print("</td>");
 
 			out.print("<td>");
-			out.print(result.getInt("product_id"));
+			out.print(result.getInt("item_id"));
 			out.print("</td>");
-			if(result.getInt("auction_id") == 0)
+			if(result.getInt("item_id") == 0)
 			{
 				out.print("<td>");
 				out.print("No Auction yet");
@@ -62,7 +57,7 @@
 			else
 			{
 			out.print("<td>");
-			out.print(result.getInt("auction_id"));
+			out.print(result.getInt("item_id"));
 			out.print("</td>");
 			}
 			out.print("</tr>");
