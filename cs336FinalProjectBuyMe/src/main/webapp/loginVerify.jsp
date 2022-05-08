@@ -24,9 +24,8 @@
 		String newLogin_name = request.getParameter("login_name");
 		String newPassword = request.getParameter("password");
 
-
 		//Make an insert statement for the Sells table:
-		String search = "CREATE TEMPORARY TABLE result SELECT login_name, password FROM enduser WHERE login_name=? and password=?";
+		String search = "CREATE TEMPORARY TABLE result SELECT eid, login_name, password FROM enduser WHERE login_name=? and password=?";
 		PreparedStatement ps = con.prepareStatement(search);
 		ps.setString(1, newLogin_name);
 		ps.setString(2, newPassword);
@@ -44,6 +43,15 @@
 			out.print("duplicate accounts found: "+count);
 		} else {
 			out.print("login successful");
+			ps = con.prepareStatement("SELECT eid FROM result");
+			ResultSet rs1 = ps.executeQuery();
+			rs1.next();
+			int id = rs1.getInt("eid");
+			rs1.close();
+			ps = con.prepareStatement("INSERT INTO current_users (user_type, id)" + "VALUES (?,?)");
+			ps.setString(1, "enduser");
+			ps.setInt(2, id);
+			ps.executeUpdate();
 		}
 		
 
@@ -68,6 +76,7 @@
 		</form>
 --%>
 		
-		<a href="index.jsp"><button type="button">Log out</button></a>
+		<a href="BrowseAndSearch.jsp"><button type="button">Browse and Search Page</button></a>
+		<a href="logout.jsp"><button type="button">Log out</button></a>
 </body>
 </html>

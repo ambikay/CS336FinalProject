@@ -11,3 +11,7 @@
 #create table truck(item_id int, capacity int, size int, dimensions varchar(20), primary key (item_id), foreign key (item_id) references items(item_id))
 #insert into enduser(eid,login_name, email, password) values (1,"admin", "admin@gmail.com", "adminuser123")
 #select * from enduser
+#insert into items(item_id) values (1)
+#insert into car(item_id, color, make, model, year) values (1,"blue", "Honda", "Civic", "2016")
+#select * from items where item_id = (select item_id from car)
+#select current_bid from buys where item_id = 1
