@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Register</title>
+<title>Create a New Account</title>
 </head>
 <body>
+<h2> Create a New Account !</h2>
 	<br>
 		<form method="get" action="createAccount.jsp">
 			<table>
@@ -19,8 +20,9 @@
 				<tr>
 					<td>Password</td><td><input type="text" name="password"></td>
 				</tr>
+				
 			</table>
-			<input type="submit" value="new_account">
+			<input type="submit" value="Submit">
 		</form>
 	<br>
 </body>

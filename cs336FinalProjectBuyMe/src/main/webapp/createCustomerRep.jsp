@@ -8,12 +8,13 @@
 </head>
 <body>
 	<h1>Create Customer Representative Account</h1>
-	<form action="checkRepDetails.jsp" method="POST">
-      		Representative Full Name: <input type="text" name="name"/> <p> <br/>
+	<form action="createCustomerRepVerify.jsp" method="POST">
       		
-   	   	Representative Email: <input type="text" name="email"/> <p> <br/> 	
-		Username: <input type="text" name="username"/> <p> <br/>
-		Password: <input type="password" name="password"/> <br/>
+   	   	Admin Id:<input type="text" name="admin_id"/> <p> <br/> 	
+   	   	Customer Representative Id:<input type="text" name="rep_id"/> <p> <br/> 	
+   	   	Representative Email: <input type="text" name="rep_email"/> <p> <br/> 	
+		Username: <input type="text" name="rep_username"/> <p> <br/>
+		Password: <input type="password" name="rep_password"/> <br/>
       	<p>	<input type="submit" value="Create Account">
      	</form>
 </body>

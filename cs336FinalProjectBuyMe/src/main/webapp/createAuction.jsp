@@ -1,22 +1,34 @@
 
-<<t:base context="${pageContext.request.contextPath}" title="Create Auction">
+<t:base context="${pageContext.request.contextPath}" title="Create Auction">
 
-    <h2> Auction Details</h2>
-	<form action="createauction" method="post">
-        <label>Set Closing Date:</label> <input type="date" name="close_date" required> <br>
-        <br/><label>Set Closing Time:</label> <input type="time" name="close_time" required> <br>
-        <br/><label>Set Initial Price: </label> <input type="number" name="init_price" required> <br> 
-        <br/><label>Set Minimum Price: </label> <input type="number" name="minimum" required> <br> 
-        <br/><label>Set Bid Increment:</label> <input type="number" name="bid_increment" required min=00.01 step="0.01"> <br>
-            
-        <h2>Item Details</h2>
-        <label>Create New Item ID:</label> <input type="number" name="item_ID" required min=1> <br>
-        <br/><label>Enter Sub-Category:</label> <input type="name" name="subcategory" required> <br>
-        <br/><label>Enter Name:</label> <input type="name" name="name" required> <br>
-        <br/><label>Enter Brand:</label> <input type="name" name="brand" required> <br>
-        <br/><label>Enter Color:</label> <input type="name" name="color" required> <br>
-        <br/><input type="submit" value="Submit">
-	<br>
-	<p></p>
 
+<button onclick="window.location.href='userfirstpage.jsp';">Return to Homepage</button>
+
+  <h3> Auction Page</h3>
+	<div class="content">
+		<form action="Auctionverify.jsp" method="POST">	
+	<table>
+	 <tr> 
+	 <td>
+	<input type="hidden" name="product_id" value = <%=request.getParameter("product_id")%>>
+	</td>
+	</tr> 
+	<tr>    
+	<td>End Date: <br><p>Enter the end date of the auction in the specified format (yyyy-MM-dd hh:mm:ss)</p> </td><td><input type="text" name="end_datetime" id="end_datetime" placeholder="yyyy-MM-dd hh:mm:ss" required></td>
+	</tr> 
+	<tr>   
+	<td>Secret Minimum Price: <br><p>Enter the minimum price that you want to sell this item for</p><br> <p>Note: Minimum Price has to be greater than 0 and will be hidden from other users </p> </td><td><input type="number" name="min_price" placeholder="0" required></td>
+	</tr>	
+	<tr>    
+	<td>Initial Price: <br><br> <p> Note: Initial Price has to be lesser than the secret minimum price </p> </td><td><input type="number" name="starting_price" placeholder="0" required></td>
+	</tr>	
+	<tr>    
+	<td>New Bid Increment: <br><p>Enter the Bid Increment for the next valid bid</p> </td><td><input type="number" name="new_bid_increment" placeholder="0" required></td>
+	</tr>	
+	
+	</table>
+	<input type="submit" value="Create Auction">
+	</form>
+	</div>
+	
 </t:base>
